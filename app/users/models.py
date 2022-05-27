@@ -8,4 +8,8 @@ class User(models.Model):
     name = models.CharField(max_length=55, null=False)
     surname = models.CharField(max_length=30, null=False)
     email = models.EmailField(max_length=100,  null=False)
-    password=models.CharField(max_length=16, null=False)
+    password = models.CharField(max_length=16, null=False)
+
+
+class Sample(models.Model):
+    image = models.FileField(null=True)
