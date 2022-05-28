@@ -10,19 +10,25 @@
 
 <main class="form-signin w-100 m-auto text-center">
     <form method="POST" action="">
+        {% csrf_token %}
         <h1><span><i class="bi bi-hurricane"></i> Vector Job</span></h1>
         <h4 class="mb-3 fw-normal">Please login</h4>
 
         <div class="form-floating">
-            {{form.username}}
-            {{form.username.label}} 
-        </div>
-        <div class="form-floating">
-            {{form.password1}}
-            {{form.password1.label}}
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+            <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
+            <label for="floatingInput">Username</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+          </div>
         <p class="mt-2"><a href="#">Forgot my password</a></p>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-2">If you don't have an account! <a href="{% url 'register_page' %}">Register</a></p>
+
+        {% for message in messages %}
+            {% include 'partials/_alert_message.html' %}
+        {% endfor %}
     </form>
 </main>
 

@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from . import features_list
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+
 def index(requests):
 
     features = features_list.FEATURES_LIST
@@ -13,9 +15,12 @@ def index(requests):
     }
     return render(requests,"pages/index.html", context)
 
+
+@login_required(login_url="login_page")
 def home(requests):
     return render(requests, "pages/home.html")
 
 
+@login_required(login_url="login_page")
 def dashboard(requests):
     return render(requests, "pages/dashboard.html")

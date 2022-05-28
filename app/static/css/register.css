@@ -10,3 +10,12 @@ body {
   padding-bottom: 40px;
   background-color: #f5f5f5;
 }
+
+.errorlist{
+  background-color:  #d9534f ;
+  color: #ffffff;
+  margin: 10px;
+  border-radius: 5px;
+  list-style: none;
+  display: inline-block;
+}
