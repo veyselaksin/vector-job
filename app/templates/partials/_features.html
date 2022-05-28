@@ -1,0 +1,16 @@
+<div class="container px-4" id="featured-3">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+        {% for feature in features %}
+        <div class="feature col">
+            <div
+                class="feature-icon d-inline-flex align-items-center justify-content-center bg-primary bg-gradient text-white fs-2 mb-3">
+                <svg class="bi" width="1em" height="1em">
+                    <use xlink:href={{feature.icon}} />
+                </svg>
+            </div>
+            <h2>{{ feature.title }}</h2>
+            <p>{{ feature.text }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -3,10 +3,16 @@
 
 {% block head %}
     <title>Vector Job</title>
+    <link rel="stylesheet" href="{% static 'css/heroes.css' %}">
+    <link rel="stylesheet" href="{% static 'css/features.css' %}">
 {% endblock %}
 
 {% block body %}
+    {% include 'partials/_svg_icons.html' %}
     {% include 'partials/_navbar.html' %}
+    {% include 'partials/_left_align_hero.html' %}
+    {% include 'partials/_features.html' %}
+    {% include 'partials/_footer.html' %}
 {% endblock %}
 
 {% block scripts %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block body %}
+
+<main class="form-signin w-100 m-auto text-center">
+    <form method="POST" action="">
+        <h1><span><i class="bi bi-hurricane"></i> Vector Job</span></h1>
+        <h4 class="mb-3 fw-normal">Please login</h4>
+
+        <div class="form-floating">
+            {{form.username}}
+            {{form.username.label}} 
+        </div>
+        <div class="form-floating">
+            {{form.password1}}
+            {{form.password1.label}}
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-2"><a href="#">Forgot my password</a></p>
+    </form>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
