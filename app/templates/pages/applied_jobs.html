@@ -21,7 +21,8 @@
                             <h5 class="card-title h4 fw-bold">{{ applied_job.job.title }}</h5>
                             <p class="text-muted subtitle">{{ applied_job.job.created_at }}</p>
                             <p class="card-text text-truncate"> {{ applied_job.job.description }}</p>
-                            <a href="{% url 'view_apply' applied_job.id %}" class="btn btn-primary">View Applied Job Details</a>
+                            <a href="{% url 'view_apply' applied_job.id %}" class="btn btn-primary">View Applied Job
+                                Details</a>
                         </div>
                     </div>
                 </div>
@@ -30,6 +31,8 @@
         </div>
     </div>
 </div>
+
+{% include 'partials/_footer.html' %}
 {% endblock %}
 
 {% block scripts %}
