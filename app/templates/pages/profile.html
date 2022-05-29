@@ -11,6 +11,7 @@
             {% include 'partials/settings/_settings_menu.html' %}
         </div>
         <div class="col-md-10">
+            <h2>Update Profile</h2>
             <form class="row g-3" method="POST" action="">
                 {% csrf_token %}
                 <div class="col-md-6">
@@ -43,6 +44,7 @@
         </div>
     </div>
 </div>
+{% include 'partials/_footer.html' %}
 {% endblock %}
 
 {% block scripts %}
