@@ -80,24 +80,17 @@
                 </div>
             </div>
             <div class="row">
-                {% for job in jobs %}
-                <div class="col-sm-3 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title h4 fw-bold">{{ job.title }}</h5>
-                            <p class="text-muted subtitle">{{ job.created_at }}</p>
-                            <p class="card-text text-truncate"> {{ job.description }}</p>
-                            <a href="{% url 'view_applicants' job.id %}" class="btn btn-primary">Show Applicants</a>
-                        </div>
-                    </div>
+                <div class="col-md-10">
+                    <h3 class="title mb-3"> Applied for - {{ applicant.job.title }} </h3>
+                    <p class="text-muted subtitle"> <strong>Date:</strong> {{ applicant.created_at }}</p>
+                    <p class="text"> <strong>Manager:</strong> {{applicant.job.created_by.first_name}} {{applicant.job.created_by.last_name}}</p>
+                    <p class="text"> <strong>Job Description:</strong> {{applicant.job.description}} </p>
+                    <p class="text"> <strong>Applicant:</strong> {{applicant.created_by.first_name}} {{applicant.created_by.last_name}} </p>
+                    <p class="text"> <strong>Applicant Email:</strong> {{applicant.created_by.email}} </p>
+                    <p class="text"> <strong>Applicant Content:</strong> {{applicant.content}}</p>
+                    <p class="text"> <strong>Applicant Experience:</strong> {{applicant.experience}}</p>
                 </div>
-                {% empty %}
-                <div class="container-fluid">
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Oh wait!</strong> There are no posted jobs yet from you.
-                    </div>
-                </div>
-                {% endfor %}
+            </div> 
             </div>
         </main>
     </div>

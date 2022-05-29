@@ -80,23 +80,21 @@
                 </div>
             </div>
             <div class="row">
-                {% for job in jobs %}
-                <div class="col-sm-3 mb-4">
+
+                {% for applicant in applicants %}
+                    {% if job.id == applicant.job.id %}
+                        <div class="col-sm-3 mb-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title h4 fw-bold">{{ job.title }}</h5>
-                            <p class="text-muted subtitle">{{ job.created_at }}</p>
-                            <p class="card-text text-truncate"> {{ job.description }}</p>
-                            <a href="{% url 'view_applicants' job.id %}" class="btn btn-primary">Show Applicants</a>
+                            <h5 class="card-title h4 fw-bold">{{ applicant.created_by.first_name }} {{ applicant.created_by.last_name }}</h5>
+                            <p class="text-muted subtitle">Apply Date: {{ applicant.created_at }}</p>
+                            <p class="card-text text-truncate"> <strong>Applicant Content:</strong> {{ applicant.content }}</p>
+                            <p class="card-text text-truncate"> <strong>Applicant Experience:</strong> {{ applicant.experience }}</p>
+                            <a class="btn btn-primary" href="{% url 'view_applicant' applicant.id %}">Applicant Details</a>
                         </div>
                     </div>
                 </div>
-                {% empty %}
-                <div class="container-fluid">
-                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                        <strong>Oh wait!</strong> There are no posted jobs yet from you.
-                    </div>
-                </div>
+                    {% endif %}
                 {% endfor %}
             </div>
         </main>

@@ -1,5 +1,3 @@
-from pyexpat import model
-from statistics import mode
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -26,3 +24,12 @@ class Job(models.Model):
 
     def __str__(self) -> str:
         return self.title
+
+job_tags= [c[0] for c in Job.job_tag.field.choices]
+
+class ApplyJob(models.Model):
+    job = models.ForeignKey(Job, related_name='apply_job', on_delete=models.CASCADE)
+    content = models.TextField(null=True)
+    experience = models.TextField(null=True)
+    created_by = models.ForeignKey(User, related_name='apply_job', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    {% include 'partials/_navbar.html' %}
+    <div class="container mt-3">
+        <h2 class="title">Apply Job - {{ job.title }} </h2>
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.content.label }}
+                {{ form.content }} 
+            </div>
+            <div class="mb-3">
+                {{ form.experience.label }}
+                {{ form.experience }}
+            </div>
+            <button type="submit" class="btn btn-primary">Apply</button>
+          </form>
+
+    </div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

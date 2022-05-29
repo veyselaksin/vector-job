@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+{% include 'partials/_navbar.html' %}
+<div class="container-fluid mt-3">
+    <h2 class="title fw-bold mb-3">Settings</h2>
+    <div class="row">
+        <div class="col-md-2">
+            {% include 'partials/settings/_settings_menu.html' %}
+        </div>
+        <div class="col-md-10">
+            <h3 class="title mb-3"> Applied Jobs </h3>
+            <div class="row">
+                {% for applied_job in applied_jobs %}
+                <div class="col-sm-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title h4 fw-bold">{{ applied_job.job.title }}</h5>
+                            <p class="text-muted subtitle">{{ applied_job.job.created_at }}</p>
+                            <p class="card-text text-truncate"> {{ applied_job.job.description }}</p>
+                            <a href="{% url 'view_apply' applied_job.id %}" class="btn btn-primary">View Applied Job Details</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

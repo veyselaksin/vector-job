@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header">
+        Settings
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <a href="{% url 'profile' %}" class="text-decoration-none text-dark">
+                    Profile
+                </a>
+            </li>
+            {% if user_type.is_manager %}
+            <li class="list-group-item">
+                <a href="{% url 'dashboard' %}" class="text-decoration-none text-dark">
+                    Dashboard
+                </a>
+            </li>
+            {% else %}
+            <li class="list-group-item">
+                <a href="{% url 'applied_jobs' %}" class="text-decoration-none text-dark">
+                    Applied Jobs
+                </a>
+            </li>
+            {% endif%}
+        </ul>
+    </div>
+</div>
