@@ -1,6 +1,6 @@
 # Vector Job
 
-* 🇹🇷 [Türkçe açıklama](/README.tr.md)
+* 🇹🇷 [Türkçe Açıklama](/README.tr.md)
 * 🇺🇸 [English Description](/README.en.md)
 
 Vector Job was created as an application study to Baykar Defense Industry. Multiple technologies and software tools are used in this project.
