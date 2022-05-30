@@ -1,11 +1,7 @@
 # Vector Job
-
-* 🇹🇷 [Türkçe açıklama](/README.tr.md)
-* 🇺🇸 [English Description](/README.en.md)
-
 Vector Job was created as an application study to Baykar Defense Industry. Multiple technologies and software tools are used in this project.
 
-## Table of Contents
+## İçindekiler
 * [What is the Vector Job?](#vectorjob)
 * [Used Technologies](#tech)
 * [Setup](#setup)
@@ -15,6 +11,8 @@ Vector Job was created as an application study to Baykar Defense Industry. Multi
 </a>
 
 Vector Job is a job search platform where you can easily find a job and manage your applications, if you are a manager, you can open a job posting. You can filter job postings suitable for you, view them in your workflow and apply for one or more job postings you like.
+
+**Note:** An activation link will be sent to your email address while registering. Your account will not be active until you click on the activation link. If you can't view the mail, please don't forget to check spam too!
 
 <code>Vecor Job Web Site: http://ec2-52-12-227-159.us-west-2.compute.amazonaws.com</code>
 
